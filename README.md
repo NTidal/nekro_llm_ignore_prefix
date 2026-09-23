@@ -69,13 +69,14 @@ NA 没有暴露历史渲染钩子。若需要"对 LLM 完全不可见但插件�
 
 **配合 GsCore 桥接（典型场景）**
 
-想让 `core 帮我查体力` 这类消息只给 GsCore 桥接处理、AI 不掺话：
+想让 `core 帮我查体力` 这类消息只给 [GsCore 桥接](https://github.com/NTidal/nekro_gscore_bridge)处理、AI 不掺话：
 
 - `PREFIXES` 填 `["core", "gs", "体力"]`（与 GsCore 桥接的 `GSCORE_COMMAND_PREFIXES` 保持一致）
 - 消息照常被桥接插件转发给 gsuid_core，AI 不回复
 
 > 也可以直接用 GsCore 桥接自带的混合模式（`HYBRID_MODE`），两者取其一即可；
 > 本插件的优势是规则集中管理、支持正则与频道白名单。
+> 完整方案见 GsCore 桥接仓库 README 的「使用模式」章节。
 
 **自定义记录指令**
 
